@@ -8,8 +8,8 @@ public class HorarioDaLinhaDeOnibus {
     public static final int IDA = 1;
     public static final int VOLTA = 2;
     private long _id;
-    private String horarioDaIda;
-    private String HorarioDaVolta;
+    private String horario;
+    private int tipo;
 
     public long get_id() {
         return _id;
@@ -19,20 +19,20 @@ public class HorarioDaLinhaDeOnibus {
         this._id = _id;
     }
 
-    public String getHorarioDaVolta() {
-        return HorarioDaVolta;
+    public String getHorario() {
+        return this.horario;
     }
 
-    public void setHorarioDaVolta(String horarioDaVolta) {
-        HorarioDaVolta = horarioDaVolta;
+    public void setHorario(String horario) {
+        this.horario = horario;
     }
 
-    public String getHorarioDaIda() {
-        return horarioDaIda;
+    public int getTipo() {
+        return tipo;
     }
 
-    public void setHorarioDaIda(String horarioDaIda) {
-        this.horarioDaIda = horarioDaIda;
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
     }
 
 }

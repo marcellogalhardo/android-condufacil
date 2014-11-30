@@ -15,7 +15,7 @@ import android.widget.ListView;
 import com.galhardo.marcello.livebus.R;
 import com.galhardo.marcello.livebus.activity.list_view_adapter.LinhaDeOnibusListViewAdapter;
 import com.galhardo.marcello.livebus.database.DatabaseHelper;
-import com.galhardo.marcello.livebus.database.LinhaDeOnibusDAO;
+import com.galhardo.marcello.livebus.data_acess_object.LinhaDeOnibusDAO;
 import com.galhardo.marcello.livebus.model.LinhaDeOnibus;
 
 public class LinhaDeOnibusActivity extends ActionBarActivity {
@@ -41,7 +41,7 @@ public class LinhaDeOnibusActivity extends ActionBarActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_linha_de_onibus, menu);
-        return true;
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -74,6 +74,7 @@ public class LinhaDeOnibusActivity extends ActionBarActivity {
 
                 Intent intent = new Intent(LinhaDeOnibusActivity.this, HorarioDaLinhaDeOnibusActivity.class);
                 intent.putExtra(HorarioDaLinhaDeOnibusActivity.PARAMETRO_NOME_DA_LINHA, linhaDeOnibus.getNomeDaLinha());
+                intent.putExtra(HorarioDaLinhaDeOnibusActivity.PARAMETRO_NOME_DA_VIACAO, linhaDeOnibus.getNomeDaCompanhia());
                 intent.putExtra(HorarioDaLinhaDeOnibusActivity.PARAMETRO_LINHA_DE_ONIBUS_ID, linhaDeOnibus.get_id());
                 startActivity(intent);
             }

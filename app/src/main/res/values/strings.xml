@@ -17,5 +17,6 @@
     <!-- Tabs Labels -->
     <string name="list_view_horario_de_linha_de_onibus_ida">IDA</string>
     <string name="list_view_horario_de_linha_de_onibus_volta">VOLTA</string>
+    <string name="list_view_horario_de_linha_de_onibus_circular">CIRCULAR</string>
 
 </resources>

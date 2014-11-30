@@ -23,16 +23,14 @@ public class HorarioDaLinhaDeOnibusListViewAdapter extends BaseAdapter {
     private ArrayList<HorarioDaLinhaDeOnibus> horariosDasLinhasDeOnibus;
     private LayoutInflater inflater;
     private Context context;
-    private int abaSelecionada;
 
     private class ViewHolder {
         TextView textViewLineName;
     }
 
-    public HorarioDaLinhaDeOnibusListViewAdapter(Context context, ArrayList<HorarioDaLinhaDeOnibus> horariosDaLinhaDeOnibus, int abaSelecionada) {
+    public HorarioDaLinhaDeOnibusListViewAdapter(Context context, ArrayList<HorarioDaLinhaDeOnibus> horariosDaLinhaDeOnibus) {
         this.horariosDasLinhasDeOnibus = horariosDaLinhaDeOnibus;
         this.context = context;
-        this.abaSelecionada = abaSelecionada;
         inflater = LayoutInflater.from(this.context);
     }
 
@@ -64,11 +62,7 @@ public class HorarioDaLinhaDeOnibusListViewAdapter extends BaseAdapter {
         }
 
         TextView textViewLineName = (TextView) convertView.findViewById(R.id.list_view_horario_da_linha_de_onibus_nome);
-        if (abaSelecionada == HorarioDaLinhaDeOnibusActivity.ABA_IDA_CODIGO) {
-            textViewLineName.setText(horariosDasLinhasDeOnibus.get(position).getHorarioDaIda());
-        } else if (abaSelecionada == HorarioDaLinhaDeOnibusActivity.ABA_VOLTA_CODIGO) {
-            textViewLineName.setText(horariosDasLinhasDeOnibus.get(position).getHorarioDaVolta());
-        }
+        textViewLineName.setText(horariosDasLinhasDeOnibus.get(position).getHorario());
         mViewHolder.textViewLineName = textViewLineName;
         return convertView;
     }

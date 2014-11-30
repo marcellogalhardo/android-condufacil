@@ -1,4 +1,4 @@
-package com.galhardo.marcello.livebus.database;
+package com.galhardo.marcello.livebus.data_acess_object;
 
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -42,10 +42,13 @@ public class LinhaDeOnibusDAO {
 
     public ArrayList<LinhaDeOnibus> obterTodos() {
         StringBuilder sql = new StringBuilder();
-        sql.append("SELECT");
-        sql.append("  *");
-        sql.append("FROM");
-        sql.append("  " + NOME_DA_TABELA);
+        sql.append(" SELECT");
+        sql.append("   *");
+        sql.append(" FROM");
+        sql.append("   " + NOME_DA_TABELA);
+        sql.append(" ORDER BY");
+        sql.append("     localDaIda");
+        sql.append("    ,localDaVolta");
 
         Cursor cursor = this.database.rawQuery(sql.toString(), null);
 
@@ -74,6 +77,9 @@ public class LinhaDeOnibusDAO {
         sql.append(String.format("       nomeDaCompanhia MATCH '%s'", textoPesquisado));
         sql.append(String.format("    OR localDaIda MATCH '%s'", textoPesquisado));
         sql.append(String.format("    OR localDaVolta MATCH '%s'", textoPesquisado));
+        sql.append(" ORDER BY");
+        sql.append("     localDaIda");
+        sql.append("    ,localDaVolta");
 
         Cursor cursor = this.database.rawQuery(sql.toString(), null);
 
