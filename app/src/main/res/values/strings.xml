@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Geral -->
+    <string name="app_name">Live Bus Guapimirim</string>
+    <string name="search_hint">Insira sua busca.</string>
+
+    <!-- Action bar: Action labels -->
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Localizar</string>
+    <string name="action_favorite">Favoritos</string>
+
+    <!-- Main Activity Labels -->
+    <string name="title_activity_main">Live Bus</string>
+    <string name="title_activity_horario_de_linha_de_onibus">Horário da linha de ônibus</string>
+
+    <!-- Tabs Labels -->
+    <string name="list_view_horario_de_linha_de_onibus_ida">IDA</string>
+    <string name="list_view_horario_de_linha_de_onibus_volta">VOLTA</string>
+
+</resources>
