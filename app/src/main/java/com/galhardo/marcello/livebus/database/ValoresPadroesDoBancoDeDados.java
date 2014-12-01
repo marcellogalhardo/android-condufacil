@@ -249,21 +249,20 @@ public class ValoresPadroesDoBancoDeDados {
         insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '15:00'            , " + HorarioDaLinhaDeOnibus.IDA + ", 6);");
         insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '15:40'            , " + HorarioDaLinhaDeOnibus.IDA + ", 6);");
         insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '16:20'            , " + HorarioDaLinhaDeOnibus.IDA + ", 6);");
-        insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '07:00'            , " + HorarioDaLinhaDeOnibus.IDA + ", 6);");
 
         // Viação Reginas: Guapimirim - Duque de Caxias (VOLTA)
         insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '06:00'            , " + HorarioDaLinhaDeOnibus.VOLTA + ", 6);");
         insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '07:00'            , " + HorarioDaLinhaDeOnibus.VOLTA + ", 6);");
         insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '08:00'            , " + HorarioDaLinhaDeOnibus.VOLTA + ", 6);");
         insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '09:00'            , " + HorarioDaLinhaDeOnibus.VOLTA + ", 6);");
-        insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '13:00'            , " + HorarioDaLinhaDeOnibus.VOLTA + ",6);");
-        insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '13:40'            , " + HorarioDaLinhaDeOnibus.VOLTA + ",6);");
-        insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '14:20'            , " + HorarioDaLinhaDeOnibus.VOLTA + ",6);");
-        insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '15:00'            , " + HorarioDaLinhaDeOnibus.VOLTA + ",6);");
-        insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '17:00'            , " + HorarioDaLinhaDeOnibus.VOLTA + ",6);");
-        insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '17:40'            , " + HorarioDaLinhaDeOnibus.VOLTA + ",6);");
-        insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '18:20'            , " + HorarioDaLinhaDeOnibus.VOLTA + ",6);");
-        insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '19:00'            , " + HorarioDaLinhaDeOnibus.VOLTA + ",6);");
+        insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '13:00'            , " + HorarioDaLinhaDeOnibus.VOLTA + ", 6);");
+        insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '13:40'            , " + HorarioDaLinhaDeOnibus.VOLTA + ", 6);");
+        insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '14:20'            , " + HorarioDaLinhaDeOnibus.VOLTA + ", 6);");
+        insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '15:00'            , " + HorarioDaLinhaDeOnibus.VOLTA + ", 6);");
+        insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '17:00'            , " + HorarioDaLinhaDeOnibus.VOLTA + ", 6);");
+        insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '17:40'            , " + HorarioDaLinhaDeOnibus.VOLTA + ", 6);");
+        insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '18:20'            , " + HorarioDaLinhaDeOnibus.VOLTA + ", 6);");
+        insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '19:00'            , " + HorarioDaLinhaDeOnibus.VOLTA + ", 6);");
 
         // Viação Reginas: Guapimirim - Praça Mauá (IDA)
         insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '06:30'            , " + HorarioDaLinhaDeOnibus.IDA + ", 7);");
@@ -395,12 +394,6 @@ public class ValoresPadroesDoBancoDeDados {
         insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '19:40'            , " + HorarioDaLinhaDeOnibus.CIRCULAR + ", 11);");
         insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '20:00'            , " + HorarioDaLinhaDeOnibus.CIRCULAR + ", 11);");
         insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '20:20'            , " + HorarioDaLinhaDeOnibus.CIRCULAR + ", 11);");
-        insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '20:40'            , " + HorarioDaLinhaDeOnibus.CIRCULAR + ", 11);");
-        insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '21:00'            , " + HorarioDaLinhaDeOnibus.CIRCULAR + ", 11);");
-        insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '21:20'            , " + HorarioDaLinhaDeOnibus.CIRCULAR + ", 11);");
-        insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '21:40'            , " + HorarioDaLinhaDeOnibus.CIRCULAR + ", 11);");
-        insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '22:00'            , " + HorarioDaLinhaDeOnibus.CIRCULAR + ", 11);");
-        insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '22:20'            , " + HorarioDaLinhaDeOnibus.CIRCULAR + ", 11);");
         insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '20:40'            , " + HorarioDaLinhaDeOnibus.CIRCULAR + ", 11);");
         insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '23:00'            , " + HorarioDaLinhaDeOnibus.CIRCULAR + ", 11);");
         insertSql.add("INSERT INTO " + HorarioDaLinhaDeOnibusDAO.NOME_DA_TABELA + " VALUES (null, '24:00'            , " + HorarioDaLinhaDeOnibus.CIRCULAR + ", 11);");
