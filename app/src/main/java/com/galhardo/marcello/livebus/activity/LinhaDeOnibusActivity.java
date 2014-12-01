@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.support.v7.widget.SearchView;
 
 import com.galhardo.marcello.livebus.R;
 import com.galhardo.marcello.livebus.activity.list_view_adapter.LinhaDeOnibusListViewAdapter;
@@ -23,7 +24,7 @@ public class LinhaDeOnibusActivity extends ActionBarActivity {
     private Context context;
     private DatabaseHelper databaseHelper;
     private LinhaDeOnibusDAO linhaDeOnibusDAO;
-
+    private SearchView campoParaPesquisa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +37,25 @@ public class LinhaDeOnibusActivity extends ActionBarActivity {
         configurarReferenciaDaUi();
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_linha_de_onibus, menu);
+        campoParaPesquisa = (SearchView) menu.findItem(R.id.action_pesquisar).getActionView();
+        campoParaPesquisa.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                ListView lv = LinhaDeOnibusActivity.this.listViewLinhaDeOnibus;
+                lv.setAdapter(new LinhaDeOnibusListViewAdapter(LinhaDeOnibusActivity.this.context,
+                        linhaDeOnibusDAO.obterTodosAonde(newText)));
+                return !lv.getAdapter().isEmpty();
+            }
+        });
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -50,18 +65,17 @@ public class LinhaDeOnibusActivity extends ActionBarActivity {
         super.onDestroy();
     }
 
-    public void configurarActionBar() {
+    private void configurarActionBar() {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(R.string.app_name);
         actionBar.setIcon(R.drawable.ic_launcher);
     }
 
-    public void configurarReferenciaDaUi() {
+    private void configurarReferenciaDaUi() {
         this.configurarListView();
-
     }
 
-    public void configurarListView() {
+    private void configurarListView() {
         this.listViewLinhaDeOnibus = (ListView) findViewById(R.id.list_view_linha_de_onibus);
         this.listViewLinhaDeOnibus.setAdapter(
                 new LinhaDeOnibusListViewAdapter(this.context, linhaDeOnibusDAO.obterTodos()));

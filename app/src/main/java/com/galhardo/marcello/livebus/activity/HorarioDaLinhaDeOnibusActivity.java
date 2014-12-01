@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TabWidget;
+import android.widget.TextView;
 
 import com.galhardo.marcello.livebus.R;
 import com.galhardo.marcello.livebus.activity.list_view_adapter.HorarioDaLinhaDeOnibusListViewAdapter;
@@ -51,6 +52,7 @@ public class HorarioDaLinhaDeOnibusActivity extends ActionBarActivity {
         this.carregarHorarioDaLinhaSelecionada();
         this.configurarListView();
         this.configurarTabs();
+        this.configurarNomeDaViacao();
     }
 
     @Override
@@ -132,6 +134,13 @@ public class HorarioDaLinhaDeOnibusActivity extends ActionBarActivity {
         this.listViewHorarioDaLinhaDeOnibusCircular = (ListView) findViewById(R.id.list_view_horario_de_linha_de_onibus_circular);
         this.listViewHorarioDaLinhaDeOnibusCircular.setAdapter(
                 new HorarioDaLinhaDeOnibusListViewAdapter(this.context, this.horariosDaLinhaDeOnibusCircular));
+    }
+
+    public void configurarNomeDaViacao() {
+        /*
+        TextView nomeDaViacao = (TextView) findViewById(R.id.activity_horario_da_linha_de_onibus_nome_da_linha_de_onibus);
+        nomeDaViacao.setText(this.nomeDaViacao);
+        */
     }
 
 }

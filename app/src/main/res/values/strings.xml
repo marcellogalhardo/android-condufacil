@@ -2,16 +2,15 @@
 <resources>
 
     <!-- Geral -->
-    <string name="app_name">Live Bus Guapimirim</string>
+    <string name="app_name">LiveBus Guapimirim</string>
     <string name="search_hint">Insira sua busca.</string>
 
     <!-- Action bar: Action labels -->
-    <string name="action_settings">Settings</string>
-    <string name="action_search">Localizar</string>
-    <string name="action_favorite">Favoritos</string>
+    <string name="action_bar_linha_de_onibus_titulo">Localizar</string>
+    <string name="action_bar_linha_de_onibus_hint">Aonde deseja ir?</string>
 
     <!-- Main Activity Labels -->
-    <string name="title_activity_main">Live Bus</string>
+    <string name="title_activity_main">LiveBus</string>
     <string name="title_activity_horario_de_linha_de_onibus">Horário da linha de ônibus</string>
 
     <!-- Tabs Labels -->

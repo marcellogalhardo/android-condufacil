@@ -74,9 +74,9 @@ public class LinhaDeOnibusDAO {
         sql.append(" FROM");
         sql.append("   " + NOME_DA_TABELA);
         sql.append(" WHERE");
-        sql.append(String.format("       nomeDaCompanhia MATCH '%s'", textoPesquisado));
-        sql.append(String.format("    OR localDaIda MATCH '%s'", textoPesquisado));
-        sql.append(String.format("    OR localDaVolta MATCH '%s'", textoPesquisado));
+        sql.append("       nomeDaCompanhia LIKE '%" + textoPesquisado + "%'");
+        sql.append("    OR localDaIda      LIKE '%" + textoPesquisado + "%'");
+        sql.append("    OR localDaVolta    LIKE '%" + textoPesquisado + "%'");
         sql.append(" ORDER BY");
         sql.append("     localDaIda");
         sql.append("    ,localDaVolta");
