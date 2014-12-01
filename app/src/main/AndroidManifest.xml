@@ -23,11 +23,7 @@
 
         <activity
             android:name=".activity.HorarioDaLinhaDeOnibusActivity"
-            android:label="@string/title_activity_horario_de_linha_de_onibus"
-            android:uiOptions="splitActionBarWhenNarrow" >
-
-            <meta-data android:name="android.support.UI_OPTIONS"
-                android:value="splitActionBarWhenNarrow" />
+            android:label="@string/title_activity_horario_de_linha_de_onibus" >
         </activity>
 
     </application>
