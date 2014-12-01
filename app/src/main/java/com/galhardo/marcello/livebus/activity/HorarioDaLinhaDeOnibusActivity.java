@@ -65,7 +65,7 @@ public class HorarioDaLinhaDeOnibusActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(menuItem);
     }
 
-    public void configurarActionBar() {
+    private void configurarActionBar() {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle(this.nomeDaLinha);
         actionBar.setIcon(R.drawable.ic_launcher);
@@ -73,20 +73,20 @@ public class HorarioDaLinhaDeOnibusActivity extends ActionBarActivity {
         actionBar.setHomeButtonEnabled(true);
     }
 
-    public void obterParametros() {
+    private void obterParametros() {
         Bundle bundle = getIntent().getExtras();
         this.linhaDeOnibusIdSelecionado = bundle.getLong(PARAMETRO_LINHA_DE_ONIBUS_ID);
         this.nomeDaLinha = bundle.getString(PARAMETRO_NOME_DA_LINHA);
         this.nomeDaViacao = bundle.getString(PARAMETRO_NOME_DA_VIACAO);
     }
 
-    public void carregarHorarioDaLinhaSelecionada() {
+    private void carregarHorarioDaLinhaSelecionada() {
         this.horariosDaLinhaDeOnibusIda = horarioDaLinhaDeOnibusDAO.obterTodosOsHorariosDeIdaAondeLinhaDeOnibusE(this.linhaDeOnibusIdSelecionado);
         this.horariosDaLinhaDeOnibusVolta = horarioDaLinhaDeOnibusDAO.obterTodosOsHorariosDeVoltaAondeLinhaDeOnibusE(this.linhaDeOnibusIdSelecionado);
         this.horariosDaLinhaDeOnibusCircular = horarioDaLinhaDeOnibusDAO.obterTodosOsHorariosCircularAondeLinhaDeOnibusE(this.linhaDeOnibusIdSelecionado);
     }
 
-    public void configurarTabs() {
+    private void configurarTabs() {
         TabHost abas = (TabHost) findViewById(android.R.id.tabhost);
         abas.setup();
         TabHost.TabSpec aba;
@@ -122,7 +122,7 @@ public class HorarioDaLinhaDeOnibusActivity extends ActionBarActivity {
 
     }
 
-    public void configurarListView() {
+    private void configurarListView() {
         this.listViewHorarioDaLinhaDeOnibusIda = (ListView) findViewById(R.id.list_view_horario_de_linha_de_onibus_ida);
         this.listViewHorarioDaLinhaDeOnibusIda.setAdapter(
                 new HorarioDaLinhaDeOnibusListViewAdapter(this.context, this.horariosDaLinhaDeOnibusIda));
@@ -136,7 +136,7 @@ public class HorarioDaLinhaDeOnibusActivity extends ActionBarActivity {
                 new HorarioDaLinhaDeOnibusListViewAdapter(this.context, this.horariosDaLinhaDeOnibusCircular));
     }
 
-    public void configurarNomeDaViacao() {
+    private void configurarNomeDaViacao() {
         TextView nomeDaViacao = (TextView) findViewById(R.id.activity_horario_da_linha_de_onibus_nome_da_viacao);
         nomeDaViacao.setText(this.nomeDaViacao);
     }
