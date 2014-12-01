@@ -137,10 +137,8 @@ public class HorarioDaLinhaDeOnibusActivity extends ActionBarActivity {
     }
 
     public void configurarNomeDaViacao() {
-        /*
-        TextView nomeDaViacao = (TextView) findViewById(R.id.activity_horario_da_linha_de_onibus_nome_da_linha_de_onibus);
+        TextView nomeDaViacao = (TextView) findViewById(R.id.activity_horario_da_linha_de_onibus_nome_da_viacao);
         nomeDaViacao.setText(this.nomeDaViacao);
-        */
     }
 
 }

@@ -1,42 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TabHost
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@android:id/tabhost"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical" >
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="false"
+        android:layout_above="@+id/activity_horario_da_linha_de_onibus_rodape">
 
-        <TabWidget
-            android:id="@android:id/tabs"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <FrameLayout
-            android:id="@android:id/tabcontent"
+        <TabHost
+            android:id="@android:id/tabhost"
             android:layout_width="match_parent"
             android:layout_height="match_parent" >
 
-            <ListView
-                android:id="@+id/list_view_horario_de_linha_de_onibus_ida"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:orientation="vertical" >
 
-            <ListView
-                android:id="@+id/list_view_horario_de_linha_de_onibus_volta"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
-            <ListView
-                android:id="@+id/list_view_horario_de_linha_de_onibus_circular"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                <FrameLayout
+                    android:id="@android:id/tabcontent"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
 
-        </FrameLayout>
+                    <ListView
+                        android:id="@+id/list_view_horario_de_linha_de_onibus_ida"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <ListView
+                        android:id="@+id/list_view_horario_de_linha_de_onibus_volta"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <ListView
+                        android:id="@+id/list_view_horario_de_linha_de_onibus_circular"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </TabHost>
 
     </LinearLayout>
 
-</TabHost>
+    <LinearLayout android:id="@+id/activity_horario_da_linha_de_onibus_rodape"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true" >
+
+        <TextView
+            android:id="@+id/activity_horario_da_linha_de_onibus_nome_da_viacao"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="15dp"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:background="@color/indigo_500" />
+
+    </LinearLayout>
+</RelativeLayout>

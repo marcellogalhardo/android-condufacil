@@ -2,7 +2,7 @@
 <resources>
 
     <!-- Geral -->
-    <string name="app_name">LiveBus Guapimirim</string>
+    <string name="app_name">ConduFácil Guapimirim</string>
     <string name="search_hint">Insira sua busca.</string>
 
     <!-- Action bar: Action labels -->
@@ -10,7 +10,7 @@
     <string name="action_bar_linha_de_onibus_hint">Aonde deseja ir?</string>
 
     <!-- Main Activity Labels -->
-    <string name="title_activity_main">LiveBus</string>
+    <string name="title_activity_main">ConduFácil</string>
     <string name="title_activity_horario_de_linha_de_onibus">Horário da linha de ônibus</string>
 
     <!-- Tabs Labels -->
