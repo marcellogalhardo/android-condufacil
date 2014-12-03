@@ -3,6 +3,7 @@ package com.galhardo.marcello.livebus.data_acess_object;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteStatement;
 
 import com.galhardo.marcello.livebus.model.LinhaDeOnibus;
 
@@ -13,13 +14,13 @@ import java.util.ArrayList;
  */
 public class LinhaDeOnibusDAO {
     public static String NOME_DA_TABELA = "linha_de_onibus";
-    public static String CREATE_SCRIPT =   "CREATE TABLE " + NOME_DA_TABELA
-                                         + "("
-                                         + "   _id INTEGER PRIMARY KEY"
-                                         + "  ,nomeDaCompanhia TEXT"
-                                         + "  ,localDaIda TEXT"
-                                         + "  ,localDaVolta TEXT"
-                                         + ")";
+    public static String CREATE_SCRIPT = " CREATE TABLE " + NOME_DA_TABELA
+                                       + " ("
+                                       + "    _id INTEGER PRIMARY KEY"
+                                       + "   ,nomeDaCompanhia TEXT"
+                                       + "   ,localDaIda TEXT"
+                                       + "   ,localDaVolta TEXT"
+                                       + " )";
     public static String DROP_SCRIPT = "DROP TABLE IF EXISTS " + NOME_DA_TABELA;
     private int COLUNA_ID = 0;
     private int COLUNA_NOME_DA_COMPANHIA = 1;
@@ -41,16 +42,15 @@ public class LinhaDeOnibusDAO {
     }
 
     public ArrayList<LinhaDeOnibus> obterTodos() {
-        StringBuilder sql = new StringBuilder();
-        sql.append(" SELECT");
-        sql.append("   *");
-        sql.append(" FROM");
-        sql.append("   " + NOME_DA_TABELA);
-        sql.append(" ORDER BY");
-        sql.append("     localDaIda");
-        sql.append("    ,localDaVolta");
+        String sql = " SELECT"
+                   + "   *"
+                   + " FROM"
+                   + "   " + NOME_DA_TABELA
+                   + " ORDER BY"
+                   + "    localDaIda,"
+                   + "    localDaVolta";
 
-        Cursor cursor = this.database.rawQuery(sql.toString(), null);
+        Cursor cursor = this.database.rawQuery(sql, null);
 
         cursor.moveToFirst();
         ArrayList<LinhaDeOnibus> linhasDeOnibus = new ArrayList<LinhaDeOnibus>();
@@ -68,20 +68,24 @@ public class LinhaDeOnibusDAO {
     }
 
     public ArrayList<LinhaDeOnibus> obterTodosAonde(String textoPesquisado) {
-        StringBuilder sql = new StringBuilder();
-        sql.append(" SELECT");
-        sql.append("   *");
-        sql.append(" FROM");
-        sql.append("   " + NOME_DA_TABELA);
-        sql.append(" WHERE");
-        sql.append("       nomeDaCompanhia LIKE '%" + textoPesquisado + "%'");
-        sql.append("    OR localDaIda      LIKE '%" + textoPesquisado + "%'");
-        sql.append("    OR localDaVolta    LIKE '%" + textoPesquisado + "%'");
-        sql.append(" ORDER BY");
-        sql.append("     localDaIda");
-        sql.append("    ,localDaVolta");
+        String sql = " SELECT"
+                   + "   *"
+                   + " FROM"
+                   + "   " + NOME_DA_TABELA
+                   + " WHERE"
+                   + "        nomeDaCompanhia LIKE ?"
+                   + "     OR localDaIda      LIKE ?"
+                   + "     OR localDaVolta    LIKE ?"
+                   + "  ORDER BY"
+                   + "     localDaIda,"
+                   + "     localDaVolta";
 
-        Cursor cursor = this.database.rawQuery(sql.toString(), null);
+        textoPesquisado = '%' + textoPesquisado + '%';
+        String[] parametrosDaQuery = new String[] {
+                textoPesquisado,
+                textoPesquisado,
+                textoPesquisado };
+        Cursor cursor = this.database.rawQuery(sql, parametrosDaQuery);
 
         cursor.moveToFirst();
         ArrayList<LinhaDeOnibus> linhasDeOnibus = new ArrayList<LinhaDeOnibus>();
